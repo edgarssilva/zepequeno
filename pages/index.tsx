@@ -3,19 +3,31 @@ import {
   Container,
   createStyles,
   Overlay,
+  Space,
   Text,
   Title,
 } from "@mantine/core";
 import type { NextPage } from "next";
+import Features from "../components/Features";
 import Navbar from "../components/Navbar";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
     position: "relative",
-    paddingTop: 180,
-    paddingBottom: 130,
+    paddingTop: 200,
+    paddingBottom: 150,
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1573164713988-8665fc963095?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=980&q=80)",
+      // "url(https://media.istockphoto.com/photos/roof-skylight-windows-series-picture-id463581137?k=20&m=463581137&s=170667a&w=0&h=SGLiD8A6dG5Xv4ABMfycOjpRnmgnLHWh90e_lPZ_cvU=)",
+      "url(https://thumbs.dreamstime.com/z/skylight-window-modern-house-rooftop-150502670.jpg)",
+    // "url(https://media.istockphoto.com/photos/installing-a-skylight-picture-id1033348994)",
+    // "url(https://media.istockphoto.com/photos/plastic-or-skylight-window-on-attic-with-environmentally-friendly-and-picture-id1051099088)",
+    // "url(https://media.istockphoto.com/id/1082357740/pt/foto/roofer-builder-worker-with-ruler-install-plastic-or-skylight-window-on-attic-with.webp?s=612x612&w=is&k=20&c=ARplSQAsg1XAklljrKvGWY06Pr-fEmVLKuwiQOy7S4k=)",
+    // "url(https://media.istockphoto.com/photos/mansard-with-environmentally-friendly-and-energy-efficient-skylight-picture-id1082357842)",
+    // "url(https://media.istockphoto.com/photos/builder-inspecting-skylight-in-unfinished-house-picture-id522476568)",
+    // "url(https://media.istockphoto.com/photos/closeup-of-new-roof-with-skylight-and-natural-red-tile-picture-id520884394)",
+    // "url(https://media.istockphoto.com/photos/open-skylight-on-a-roof-shingles-under-construction-picture-id812093972)",
+    // "url(http://live-place.com/content/uploads/2017/06/GPL_IM.jpg)",
+    // "url(https://www.isolamais.com/images/w700h473c/images/janela-sotao.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
 
@@ -32,7 +44,7 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     fontWeight: 800,
-    fontSize: 40,
+    fontSize: 48,
     letterSpacing: -1,
     paddingLeft: theme.spacing.md,
     paddingRight: theme.spacing.md,
@@ -56,7 +68,7 @@ const useStyles = createStyles((theme) => ({
     textAlign: "center",
 
     "@media (max-width: 520px)": {
-      fontSize: theme.fontSizes.md,
+      fontSize: theme.fontSizes.lg,
       textAlign: "left",
     },
   },
@@ -102,42 +114,45 @@ const useStyles = createStyles((theme) => ({
 const Home: NextPage = () => {
   const { classes, cx } = useStyles();
   return (
-    <div className={classes.wrapper}>
-      <Overlay color="#000" opacity={0.65} zIndex={1} />
-      <Navbar
-        links={[
-          { label: "Home", link: "#" },
-          { label: "Contactos", link: "#contact" },
-        ]}
-      />
-      <div className={classes.inner}>
-        <Title className={classes.title}>
-          Automated AI code reviews for{" "}
-          <Text component="span" inherit className={classes.highlight}>
-            any stack
-          </Text>
-        </Title>
+    <>
+      <div className={classes.wrapper}>
+        <Overlay color="#000" opacity={0.65} zIndex={1} />
+        <Navbar
+          links={[
+            { label: "Home", link: "#" },
+            { label: "Contactos", link: "#contact" },
+          ]}
+        />
+        <div className={classes.inner}>
+          <Title className={classes.title}>
+            Serviço de{" "}
+            <Text component="span" inherit className={classes.highlight}>
+              Janelas de Sotão
+            </Text>
+          </Title>
 
-        <Container size={640}>
-          <Text size="lg" className={classes.description}>
-            Build more reliable software with AI companion. AI is also trained
-            to detect lazy developers who do nothing and just complain on
-            Twitter.
-          </Text>
-        </Container>
+          <Container size={640}>
+            <Text size="xl" className={classes.description}>
+              Serviços de instalação e reparação de janelas de sotão realizados
+              por um profissional qualificado e com experiência.
+            </Text>
+          </Container>
 
-        <div className={classes.controls}>
-          <Button
-            className={classes.control}
-            variant="filled"
-            size="lg"
-            radius={"xl"}
-          >
-            Entrar em Contacto
-          </Button>
+          <div className={classes.controls}>
+            <Button
+              className={classes.control}
+              variant="filled"
+              size="lg"
+              radius={"xl"}
+            >
+              Entrar em Contacto
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+      <Space h={"xl"} />
+      <Features />
+    </>
   );
 };
 
