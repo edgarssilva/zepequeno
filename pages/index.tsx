@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Container,
   createStyles,
@@ -16,6 +17,21 @@ const useStyles = createStyles((theme) => ({
     position: "relative",
     paddingTop: 200,
     paddingBottom: 150,
+
+    "@media (max-width: 520px)": {
+      paddingTop: 80,
+      paddingBottom: 50,
+    },
+
+    scrollBehavior: "smooth",
+  },
+
+  background: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
     backgroundImage:
       // "url(https://media.istockphoto.com/photos/roof-skylight-windows-series-picture-id463581137?k=20&m=463581137&s=170667a&w=0&h=SGLiD8A6dG5Xv4ABMfycOjpRnmgnLHWh90e_lPZ_cvU=)",
       "url(https://thumbs.dreamstime.com/z/skylight-window-modern-house-rooftop-150502670.jpg)",
@@ -30,11 +46,7 @@ const useStyles = createStyles((theme) => ({
     // "url(https://www.isolamais.com/images/w700h473c/images/janela-sotao.jpg)",
     backgroundSize: "cover",
     backgroundPosition: "center",
-
-    "@media (max-width: 520px)": {
-      paddingTop: 80,
-      paddingBottom: 50,
-    },
+    zIndex: -1,
   },
 
   inner: {
@@ -113,9 +125,15 @@ const useStyles = createStyles((theme) => ({
 
 const Home: NextPage = () => {
   const { classes, cx } = useStyles();
+  /* 
+  const parallax = useParallax<HTMLDivElement>({
+    speed: 20,
+  });
+ */
   return (
     <>
       <div className={classes.wrapper}>
+        <div className={classes.background} /*  ref={parallax.ref}  */ />
         <Overlay color="#000" opacity={0.65} zIndex={1} />
         <Navbar
           links={[
@@ -150,8 +168,43 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <Space h={"xl"} />
-      <Features />
+      <Box style={{ backgroundColor: "white" }}>
+        <Space h={"xl"} />
+        <Features />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+        <Space h={"xl"} />
+      </Box>
     </>
   );
 };
