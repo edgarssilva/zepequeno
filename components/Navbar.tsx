@@ -27,7 +27,7 @@ const useStyles = createStyles((theme) => ({
     top: HEADER_HEIGHT,
     left: 0,
     right: 0,
-    zIndex: 0,
+    zIndex: 5,
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
@@ -66,32 +66,38 @@ const useStyles = createStyles((theme) => ({
     color:
       theme.colorScheme === "dark"
         ? theme.colors.dark[0]
-        : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
+        : theme.colors.gray[0],
+    fontSize: theme.fontSizes.md,
+    fontWeight: 700,
 
     "&:hover": {
+      color: theme.colors.gray[3],
+    },
+
+    /*   "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
           ? theme.colors.dark[6]
           : theme.colors.gray[0],
-    },
+    }, */
 
     [theme.fn.smallerThan("sm")]: {
       borderRadius: 0,
       padding: theme.spacing.md,
+      fontSize: theme.fontSizes.sm,
+      color: theme.colors.gray[7],
     },
   },
 
   linkActive: {
-    "&, &:hover": {
+    /* "&, &:hover": {
       backgroundColor: theme.fn.variant({
         variant: "light",
         color: theme.primaryColor,
       }).background,
       color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
         .color,
-    },
+    }, */
   },
 }));
 
@@ -130,6 +136,7 @@ export default function HeaderResponsive({ links }: HeaderResponsiveProps) {
         </Group>
 
         <Burger
+          color="white"
           opened={opened}
           onClick={toggle}
           className={classes.burger}
