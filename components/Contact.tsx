@@ -15,6 +15,7 @@ import {
   IconBrandTwitter,
   IconBrandYoutube,
 } from "@tabler/icons";
+import { forwardRef } from "react";
 import { ContactIconsList } from "./ContactIconsList";
 
 const useStyles = createStyles((theme) => ({
@@ -83,7 +84,7 @@ const useStyles = createStyles((theme) => ({
 
 const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
 
-export default function Contact() {
+const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   const { classes } = useStyles();
 
   const icons = social.map((Icon, index) => (
@@ -98,7 +99,7 @@ export default function Contact() {
   ));
 
   return (
-    <Container id="contact" size={"lg"} style={{ width: "100%" }}>
+    <Container id="contact" size={"lg"} style={{ width: "100%" }} ref={ref}>
       <div className={classes.wrapper}>
         <SimpleGrid
           cols={2}
@@ -146,4 +147,8 @@ export default function Contact() {
       </div>
     </Container>
   );
-}
+});
+
+Contact.displayName = "Contact";
+
+export default Contact;
