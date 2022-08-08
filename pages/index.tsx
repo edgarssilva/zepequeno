@@ -1,14 +1,15 @@
 import {
-  Box,
   Button,
   Container,
   createStyles,
   Overlay,
-  Space,
+  Stack,
   Text,
   Title,
 } from "@mantine/core";
 import type { NextPage } from "next";
+import Companies from "../components/Companies";
+import Contact from "../components/Contact";
 import Features from "../components/Features";
 import Navbar from "../components/Navbar";
 
@@ -168,43 +169,17 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <Box style={{ backgroundColor: "white" }}>
-        <Space h={"xl"} />
+      <Stack
+        align={"center"}
+        justify="space-between"
+        py={50}
+        spacing={50}
+        style={{ backgroundColor: "white", overflow: "hidden" }}
+      >
         <Features />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-        <Space h={"xl"} />
-      </Box>
+        <Companies />
+        <Contact />
+      </Stack>
     </>
   );
 };

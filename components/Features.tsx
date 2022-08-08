@@ -11,6 +11,8 @@ const useStyles = createStyles((theme) => ({
     position: "relative",
     paddingTop: theme.spacing.xl,
     paddingLeft: theme.spacing.xl,
+    marginTop: theme.spacing.xl,
+    marginBottom: theme.spacing.xl,
   },
 
   overlay: {
@@ -82,13 +84,13 @@ const mockdata = [
   },
   {
     icon: IconCertificate,
-    title: "Best Quality Product",
+    title: "Serviço certificado",
     description:
       "Slakoth’s heart beats just once a minute. Whatever happens, it is content to loaf around motionless.",
   },
   {
     icon: IconCoin,
-    title: "Very Affordable Pricing",
+    title: "Preço muito acessível",
     description:
       "Thought to have gone extinct, Relicanth was given a name that is a variation of the name of the person who discovered.",
   },
@@ -98,11 +100,12 @@ export default function FeaturesAsymmetrical() {
   const items = mockdata.map((item) => <Feature {...item} key={item.title} />);
 
   return (
-    <Container mt={30} mb={30} size="lg">
+    <Container size="lg">
       <SimpleGrid
         cols={3}
         breakpoints={[{ maxWidth: "sm", cols: 1 }]}
         spacing={50}
+        my={0}
       >
         {items}
       </SimpleGrid>
